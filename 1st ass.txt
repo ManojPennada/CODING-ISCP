@@ -11,7 +11,8 @@
 //FAIL FAIL FAIL FAIL FAIL
 
 
-//1st que :
+//1st que : 
+//Finding the Prime numbers.
 
 #include<stdio.h>
 int main()
@@ -31,7 +32,8 @@ int main()
     }
 }
 
-//2nd que:
+//2nd que: 
+//Return a pointer to show largest integer.
 
 #include<stdio.h>
 long max(long *a,long *b)
@@ -49,7 +51,8 @@ int main()
     return 0;
 }
 
-//3rd que:
+//3rd que: 
+//Find Sum, difference, product, divide.
 
 #include<stdio.h>
 int main()
@@ -59,7 +62,8 @@ int main()
     printf("%d %d %d %d",a+b,a-b,a*b,a/b);
 }
 
-//4th que:
+//4th que: 
+//Maximum of 3 numbers using Ternary Operator.
 
 #include<stdio.h>
 #define max(a,b) (a>=b)?a:b
@@ -73,7 +77,8 @@ int main()
 }
 
 
-//5th que :
+//5th que : 
+//Decimal to Binary and HexaDecimal conversion.
 
 #include<stdio.h>
 int main()
