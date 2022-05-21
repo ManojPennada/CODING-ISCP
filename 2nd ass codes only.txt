@@ -50,7 +50,7 @@ int main()
     printf("no");
 }
 
-3rd que :  hh:mm:ss ( one test case failed idk why)
+3rd que :  hh:mm:ss 
 
 #include<stdio.h>
 int main()
