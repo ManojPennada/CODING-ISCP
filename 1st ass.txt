@@ -1,5 +1,5 @@
 //   MCQ :
-//same speed for all
+//do while
 //all of the mentioned
 //enum nam{.....}
 //1
