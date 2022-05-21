@@ -1,0 +1,102 @@
+1st que: Hima is trying to learn .......
+
+#include<stdio.h>
+int i,n,num;
+int main()
+{
+    scanf("%d%d",&num,&n);
+    for(i=1;i<=n;i++)
+    printf("%d X %d = %d\n",num,i,num*i);
+}
+
+2nd que : Second largest of given array
+
+#include<stdio.h>
+int n;
+int main()
+{
+    scanf("%d",&n);
+    int a[n],i,max=0;
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]>=a[max])
+        max = i;
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==a[max])
+        a[i] = 0;
+    }
+    a[max] = 0;
+    max = 0;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]>a[max])
+        max = i;
+    }
+    printf("%d",a[max]);
+} 
+
+3rd que : String palindrome
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s[10];
+    int i,num,c=0;
+    gets(s);
+    num = strlen(s);
+    for(i=0;i<num/2;i++)
+    {
+        if(s[i]==s[num-i-1])
+        c++;
+    }
+    if(c==i)
+    printf("YES");
+    else 
+    printf("NO");
+    return 0;
+}
+
+4th que : Nth fibonacci number
+
+#include<stdio.h>
+int main()
+{
+    int n1=0,n2=1,n3,n,i;
+    scanf("%d",&n);
+    for(i=3;i<=n;i++)
+    {
+        n3 = n1+n2;
+        n1 = n2;
+        n2 = n3;
+    }
+    printf("%d",n3);
+    return 0;
+}
+
+5th que : given an array ....
+
+#include<stdio.h>
+int main()
+{
+    int i,s,key,n,found=0;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    scanf("%d",&key);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==key)
+        found++;
+    }
+    if(found)
+    printf("YES");
+    else
+    printf("NO");
+    return 0;
+}
