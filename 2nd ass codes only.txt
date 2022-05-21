@@ -1,0 +1,138 @@
+1st ques : # printing
+
+#include<stdio.h>
+int n,j;
+int fn(int i)
+{
+    if(i<=n)
+    {
+        for(j=0;j<i;j++)
+        printf("#");
+        printf("\n");
+        i++;
+        fn(i);
+    }
+    else
+    return 0;
+}
+int main()
+{
+    int i=1;
+    scanf("%d",&n);
+    fn(i);
+}
+
+
+2nd que : Armstrong or not
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,b,c,d=0,temp,count=0;
+    scanf("%d",&a);
+    b = a;
+    temp =a;
+    while(temp!=0)
+    {
+        temp = temp/10;
+        count++;
+    }
+    while(b!=0)
+    {
+        c = b %10;
+        d += pow(c,count);
+        b /= 10; 
+    }
+    if(d==a || a >= 1 && a <=9)
+    printf("yes");
+    else
+    printf("no");
+}
+
+3rd que :  hh:mm:ss ( one test case failed idk why)
+
+#include<stdio.h>
+int main()
+{
+    int n,i,max=0,mi=0;
+    scanf("%d",&n);
+    char s[n][8];
+    int hr[n],min[n],sec[n];
+    for(i=0;i<n;i++)
+    scanf("%s",s[i]);
+    for(i=0;i<n;i++)
+    {
+        hr[i]  = (s[i][0]%48)*10 + s[i][1]%48;
+        min[i] = (s[i][3]%48)*10 + s[i][4]%48;
+        sec[i] = (s[i][6]%48)*10 + s[i][7]%48;
+        
+        if(hr[i]>hr[max])
+        max=i;
+        else if(hr[i]==hr[max])
+        {
+            if(min[i]>min[max])
+            max =i;
+            else if(sec[i]>sec[max])
+            max =i;
+        }
+        
+        if(hr[i]<hr[mi])
+        mi = i;
+        else if(hr[i]==hr[mi])
+        {
+            if(min[i]<min[mi])
+            mi =i;
+            else if(sec[i]<sec[mi])
+            mi =i;
+        }
+    }
+    if(sec[mi]>sec[max])
+    {
+        sec[max] = sec[max]+60;
+        min[max]--;
+    }
+    if(min[mi] > min[max])
+    {
+        min[max] = min[max] + 60;
+        hr[max]--;
+    }
+    printf("%02d:%02d:%02d",hr[max]-hr[mi], min[max]-min[mi], sec[max]-sec[mi]);
+}
+
+que 4 : reversed string
+
+#include<stdio.h>
+#include<string.h>
+int i,len;
+int main()
+{
+    char str[10];
+    scanf("%s",str);
+    len = strlen(str);
+    for(i=len-1;i>=0;i--)
+        printf("%c",*(str+i));
+}
+
+que 5: good and best numbers 
+
+#include<stdio.h>
+int main()
+{
+   int i,temp,count=0,gn=0,bn=1;
+   scanf("%d",&i);
+   temp = i;
+   while(i!=0)
+   {
+       i /= 10;
+       if(i!=0) count++;
+   }
+   for(int j =0;j<=count;j++)
+   {
+       gn +=temp%10;
+       bn *=temp % 10;
+       temp = temp/10;
+   }
+   printf("%d %d",gn,bn);
+   return 0;
+}
